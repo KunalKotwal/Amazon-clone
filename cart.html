@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Clone - Shopping Cart</title>
+<style>
+            /* Reset styles */
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar{
+    height: 60px;
+    background-color: #0f1111;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav-logo{
+    height: 50px;
+    width: 100px;
+}
+
+.logo{
+    
+    background-image: url("amazon_logo.png");
+    background-size: cover;
+    height: 50px;
+    width: 113%;
+}
+
+.border{
+    border: 1.5px solid transparent;
+}
+
+.border:hover{
+    border: 1.5px solid white;
+}
+
+/**box 2   **/
+.add-first{
+color: #cccccc;
+font-size: 0.8 rem;
+margin-left: 15px;
+}
+.add-sec{
+font-size: 1rem;
+margin-left: 3px;
+}
+.add-icon{
+    display: flex;
+    align-items: center;
+}
+
+/** box3 **/
+.nav-search{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: pink;
+    width: 620px;
+    height: 40px;
+    border-radius: 4px;
+}
+.search-select{
+    background-color: #f3f3f3;
+    width: 50px;
+    text-align: center;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border: none;
+}
+
+.search-input{
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+}
+
+.search-icon{
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: #febd68;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    color:#0f1111 ;
+}
+.nav-search:hover{
+    border: 2px solid orange;
+}
+
+/** box 4 **/
+span{
+    font-size: 0.7rem;
+}
+.nav-second{
+    font-size: 0.8rem;
+    font-weight: 700
+}
+
+.nav-lang{
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+
+/**box 6 **/
+.nav-cart i{
+font-size: 30px;
+}
+.nav-cart{
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+ /** panel */
+ 
+ .panel{
+    height: 40px;
+    background-color: #222f3d;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-evenly;
+ }
+ .panel-ops p{
+    display: inline;
+    margin-left: 15px;
+ }
+
+.panel-ops{
+    width: 70%;
+    font-size: 0.85rem;
+}
+
+.panel-deals{
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .cart {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .cart-item {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .item-image {
+    flex: 0 0 100px;
+    margin-right: 20px;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .item-details {
+    flex: 1;
+  }
+  
+  .item-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .item-price {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .item-quantity {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .item-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .item-delete {
+    color: #ff6347; /* Tomato color */
+    cursor: pointer;
+  }
+  
+  .cart-total {
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .checkout-btn {
+    background-color: #f0c14b; /* Amazon's primary button color */
+    color: #111;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .checkout-btn:hover {
+    background-color: #e1ac3e;
+  }
+</style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="index.html"><div class="nav-logo border">
+                <div class="logo"></div></a>
+            </div> 
+
+            <div class="nav-address border">
+                <p class="add-first">Deliver to</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="add-sec"> India</p>
+                </div>
+            </div>
+
+            <div class="nav-search">
+                <select class="search-select">
+                    <option value="">All</option>
+                </select>
+                <input placeholder="Search Amazon" class="search-input">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+
+            <div class="nav-lang border">
+                <i class="fa-solid fa-caret-down"></i>EN 
+            </div>
+            <div class="nav-signin border">
+                <p><a href="sign.html"><span>Hello, sign in</span></a></p>
+                <p class="nav-sec">Account & Lists</p>
+            </div>
+
+            <div class="nav-return border">
+                <p><a href="order.html"><span>Returns</span></a></p>
+                <p class="nav-sec">& Orders</p>
+            </div>
+            <div class="nav-cart border">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Cart
+            </div>
+
+        </div>
+
+        <div class="panel">
+            <div class="panel-all">
+                <i class="fa-solid fa-bars"></i>
+                All
+            </div>            <div class="panel-ops">
+              <a href="today-deals.html"> <p>Today's Deals</p></a>
+               <p>Customer Service</p>
+               <p>Registry</p>
+               <p>Gift Cards</p>
+               <p>Sell</p>
+           
+            </div>
+            <div class="panel-deals">
+                Shop deals in Electronics
+            </div>
+        </div>
+      
+    </header>
+  <div class="cart">
+    <div class="cart-item">
+      <div class="box2_image"></div>
+      <div class="item-details">
+        <div class="item-title">T-shirt</div>
+        <div class="item-price">499</div>
+        <div class="item-quantity">Quantity: 1</div>
+        <div class="item-actions">
+          <span class="item-delete">Delete</span>
+          <!-- Add more actions like Save for later or Move to wishlist -->
+        </div>
+      </div>
+    </div>
+    
+    <div class="cart-item">
+      <div class="box1_image"></div>
+      <div class="item-details">
+        <div class="item-title">Beard oil</div>
+        <div class="item-price">499</div>
+        <div class="item-quantity">Quantity: 1</div>
+        <div class="item-actions">
+          <span class="item-delete">Delete</span>
+          <!-- Add more actions like Save for later or Move to wishlist -->
+        </div>
+      </div>
+    </div>
+    
+    <div class="cart-item">
+      <div class="box3_image"></div>
+      <div class="item-details">
+        <div class="item-title">Stool</div>
+        <div class="item-price">999</div>
+        <div class="item-quantity">Quantity: 1</div>
+        <div class="item-actions">
+          <span class="item-delete">Delete</span>
+          <!-- Add more actions like Save for later or Move to wishlist -->
+        </div>
+      </div>
+    </div>
+    
+    <div class="cart-total">
+      <p>Total: 1997</p>
+      <button class="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </div>
+</body>
+</html>
+
